@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>MyHealthTools – Reverse Your Biological Age</title>
-  <!-- Google Fonts + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -62,7 +61,7 @@
       z-index: 1;
     }
 
-    /* glass cards – more futuristic */
+    /* glass cards */
     .glass-card {
       background: rgba(10, 20, 35, 0.65);
       backdrop-filter: blur(12px);
@@ -76,7 +75,6 @@
       box-shadow: 0 25px 40px -12px rgba(14,165,163,0.3);
     }
 
-    /* buttons */
     .btn-primary {
       background: linear-gradient(105deg, #0EA5A3, #1E40AF);
       border: none;
@@ -111,7 +109,6 @@
       border-color: #0EA5A3;
     }
 
-    /* navbar */
     nav {
       display: flex;
       justify-content: space-between;
@@ -176,7 +173,6 @@
       }
     }
 
-    /* hero */
     .hero {
       text-align: center;
       padding: 70px 0 30px;
@@ -217,7 +213,6 @@
       color: #0EA5A3;
     }
 
-    /* trust badges */
     .trust-section {
       margin: 60px 0 40px;
     }
@@ -235,7 +230,6 @@
       font-size: 0.85rem;
     }
 
-    /* metrics */
     .metrics-bar {
       display: flex;
       justify-content: space-between;
@@ -255,7 +249,6 @@
       color: #0EA5A3;
     }
 
-    /* feature grid (6 items) */
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -271,7 +264,6 @@
       color: #38BDF8;
     }
 
-    /* steps */
     .steps-row {
       display: flex;
       flex-wrap: wrap;
@@ -297,7 +289,6 @@
       margin-bottom: 12px;
     }
 
-    /* interactive sim */
     .simulator {
       background: rgba(5,15,25,0.7);
       backdrop-filter: blur(12px);
@@ -325,7 +316,6 @@
       accent-color: #0EA5A3;
     }
 
-    /* testimonials */
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -337,7 +327,6 @@
       font-style: normal;
     }
 
-    /* pricing */
     .pricing-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -392,13 +381,13 @@
     <div class="logo">MyHealthTools</div>
     <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
     <div class="nav-links">
-      <a href="#">Features</a>
-      <a href="#">Science</a>
-      <a href="#">Roadmap</a>
-      <a href="#">Pricing</a>
+      <a href="#features">Features</a>
+      <a href="#science">Science</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#pricing">Pricing</a>
       <div class="nav-buttons">
-        <a href="#" class="btn-outline" style="padding: 8px 22px;">Log in</a>
-        <a href="#" class="btn-primary" style="padding: 8px 22px;">Get Started</a>
+        <a href="#" class="btn-outline" style="padding: 8px 22px;" id="loginBtn">Log in</a>
+        <a href="#" class="btn-primary" style="padding: 8px 22px;" id="getStartedNavBtn">Get Started</a>
       </div>
     </div>
   </nav>
@@ -407,8 +396,8 @@
     <h1>Reverse Your<br>Biological Age</h1>
     <div class="sub">Personalised VO₂max, biological age & 12‑week longevity plan – powered by real biomarkers, not guesswork.</div>
     <div class="hero-cta">
-      <a href="#" class="btn-primary">Start My Longevity Report →</a>
-      <a href="#" class="btn-outline" style="margin-left: 20px;">Watch Demo ↓</a>
+      <a href="#" class="btn-primary" id="startReportBtn">Start My Longevity Report →</a>
+      <!-- Watch Demo removed – you can add a video link later -->
     </div>
     <div class="hero-stats">
       <div>⚡ <span>94%</span> improved VO₂max</div>
@@ -426,7 +415,7 @@
     </div>
   </div>
 
-  <div class="metrics-bar">
+  <div class="metrics-bar" id="features">
     <div class="metric"><h2 class="counter" data-target="12500">0</h2><p>analyses completed</p></div>
     <div class="metric"><h2 class="counter" data-target="91">0</h2><p>users saw bio age improvement</p></div>
     <div class="metric"><h2 class="counter" data-target="4.1">0</h2><p>avg years younger after 12 weeks</p></div>
@@ -441,14 +430,14 @@
     <div class="feature glass-card"><i class="fas fa-file-pdf"></i><h3>Premium PDF Report</h3><p>Full 30‑page analysis & personalised roadmap.</p></div>
   </div>
 
-  <div class="steps-row">
+  <div class="steps-row" id="science">
     <div class="step-card"><div class="step-number">01</div><h3>Enter your data</h3><p>Age, weight, activity & lifestyle.</p></div>
     <div class="step-card"><div class="step-number">02</div><h3>AI analysis</h3><p>Instant VO₂max, biological age & insights.</p></div>
     <div class="step-card"><div class="step-number">03</div><h3>Unlock your protocol</h3><p>Get your full 12‑week roadmap & premium report.</p></div>
   </div>
 
   <!-- interactive teaser -->
-  <div class="simulator">
+  <div class="simulator" id="roadmap">
     <h3>🔬 Try the Longevity Simulator</h3>
     <p>Add weekly cardio minutes → see how your biological age improves</p>
     <input type="range" id="longevitySlider" min="0" max="300" value="30" step="10">
@@ -458,7 +447,7 @@
       <div class="sim-card-metric">🧬 Biological age (chrono 30) <br> <span id="newBioAge">34.7</span> yrs</div>
     </div>
     <p style="font-size:0.85rem; color:#9CA3AF;">Simulation based on scientific literature. Full plan shows exact steps.</p>
-    <a href="#" class="btn-primary" style="margin-top: 20px;">Unlock My Longevity Report →</a>
+    <a href="#" class="btn-primary" id="unlockSimBtn" style="margin-top: 20px;">Unlock My Longevity Report →</a>
   </div>
 
   <div class="testimonial-grid">
@@ -467,9 +456,9 @@
     <div class="testimonial glass-card">“Finally a tool that respects privacy and gives actual science, not hype.”<br><strong>— James, 53</strong></div>
   </div>
 
-  <div class="pricing-wrap">
-    <div class="plan glass-card"><h3>Free Baseline</h3><p>✔ BMI & body fat estimate<br>✔ VO₂max score<br>✔ Biological age snapshot<br>✔ Basic lifestyle tips</p><p style="font-size: 2rem; margin: 24px 0;">$0</p><a href="#" class="btn-outline" style="width:100%; display:inline-block;">Get Free Report</a></div>
-    <div class="plan premium-plan glass-card"><div class="popular-tag">🔥 Most popular</div><h3>Premium Longevity</h3><p>✔ Full 12‑week training plan<br>✔ AI Coach insights & milestones<br>✔ Complete 40‑page PDF report<br>✔ Progress tracking & export</p><p style="font-size: 2rem; margin: 24px 0;">$4.99 <span style="font-size:1rem;">one‑time</span></p><a href="#" class="btn-primary" style="width:100%; display:inline-block;">Unlock Full Protocol →</a></div>
+  <div class="pricing-wrap" id="pricing">
+    <div class="plan glass-card"><h3>Free Baseline</h3><p>✔ BMI & body fat estimate<br>✔ VO₂max score<br>✔ Biological age snapshot<br>✔ Basic lifestyle tips</p><p style="font-size: 2rem; margin: 24px 0;">$0</p><a href="#" class="btn-outline" id="freeReportBtn" style="width:100%; display:inline-block;">Get Free Report</a></div>
+    <div class="plan premium-plan glass-card"><div class="popular-tag">🔥 Most popular</div><h3>Premium Longevity</h3><p>✔ Full 12‑week training plan<br>✔ AI Coach insights & milestones<br>✔ Complete 40‑page PDF report<br>✔ Progress tracking & export</p><p style="font-size: 2rem; margin: 24px 0;">$4.99 <span style="font-size:1rem;">one‑time</span></p><a href="#" class="btn-primary" id="unlockPricingBtn" style="width:100%; display:inline-block;">Unlock Full Protocol →</a></div>
   </div>
 
   <footer>
@@ -489,7 +478,30 @@
 </div>
 
 <script>
-  // intersection observer for counters
+  // ============================================================
+  // KONFIGURASJON – Endre disse to lenkene til dine egne
+  // ============================================================
+  const APP_URL = "https://my-health-tools.streamlit.app";   // <-- Bytt til din Streamlit-app URL
+  const STRIPE_URL = "https://buy.stripe.com/fZu00kbeq6J50LsdYk1Fe02"; // <-- Bytt til din Stripe betalingslenke
+  // ============================================================
+
+  // Alle knapper som skal gå til appen
+  const appButtons = [
+    "startReportBtn", "getStartedNavBtn", "loginBtn", "freeReportBtn"
+  ];
+  appButtons.forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.href = APP_URL;
+  });
+
+  // Alle knapper som skal gå til Stripe-betaling
+  const stripeButtons = ["unlockSimBtn", "unlockPricingBtn"];
+  stripeButtons.forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.href = STRIPE_URL;
+  });
+
+  // Animated counters
   const counters = document.querySelectorAll('.counter');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -514,15 +526,15 @@
   }, { threshold: 0.4 });
   counters.forEach(c => obs.observe(c));
 
-  // interactive slider
+  // Interactive slider
   const slider = document.getElementById('longevitySlider');
   const newVo2Span = document.getElementById('newVo2');
   const newBioSpan = document.getElementById('newBioAge');
   const baseVO2 = 38.0;
-  const baseBio = 35.0; // biological age at 30 chrono
+  const baseBio = 35.0;
   slider.addEventListener('input', function() {
     let extra = parseFloat(this.value);
-    let boost = extra / 50;   // +1 ml/kg/min per 50 min
+    let boost = extra / 50;
     let newVO2 = baseVO2 + boost;
     let bioImprove = boost * 0.5;
     let newBio = baseBio - bioImprove;
