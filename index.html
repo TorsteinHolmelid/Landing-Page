@@ -3,7 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>MyHealthTools – Know Your Biological Age</title>
+
+  <!-- ── PRIMARY SEO ── -->
+  <title>Biological Age Calculator – Free VO₂max & Health Tool | MyHealthTools</title>
+  <meta name="description" content="Find out your biological age, VO₂max score, and personalised health insights in 3 minutes. Free, science-based, and GDPR encrypted. No signup needed.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://myhealthtools.com/"><!-- CHANGE to your actual domain -->
+
+  <!-- ── OPEN GRAPH (Facebook, LinkedIn, iMessage previews) ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myhealthtools.com/">
+  <meta property="og:title" content="Biological Age Calculator – Free | MyHealthTools">
+  <meta property="og:description" content="Find out your biological age and VO₂max in 3 minutes. Free, science-based, GDPR encrypted.">
+  <meta property="og:image" content="https://myhealthtools.com/og-image.png"><!-- 1200x630px image -->
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Biological Age Calculator – Free | MyHealthTools">
+  <meta name="twitter:description" content="Find out your biological age and VO₂max in 3 minutes. Free, science-based, GDPR encrypted.">
+  <meta name="twitter:image" content="https://myhealthtools.com/og-image.png">
+
+  <!-- ── STRUCTURED DATA (tells Google exactly what this page is) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MyHealthTools",
+    "url": "https://myhealthtools.com/",
+    "description": "Free biological age calculator and VO₂max estimator. Science-based health insights in 3 minutes.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free biological age and VO₂max calculator"
+      },
+      {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "description": "12-week personalised health plan and PDF report"
+      }
+    ],
+    "featureList": [
+      "Biological age calculator",
+      "VO₂max estimator",
+      "BMI calculator",
+      "12-week health plan",
+      "GDPR encrypted"
+    ]
+  }
+  </script>
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -689,7 +745,7 @@
 
 <script>
   /* ── KONFIGURASJON ── */
-  const APP_URL    = "https://health-tools.streamlit.app";  // <- Din Streamlit URL
+  const APP_URL    = "https://health-tools.streamlit.app/";  // <- Din Streamlit URL
   const STRIPE_URL = "https://buy.stripe.com/fZu00kbeq6J50LsdYk1Fe02"; // <- Din Stripe URL
 
   /* Alle gratis-knappar → appen */
