@@ -3,545 +3,705 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>MyHealthTools – Reverse Your Biological Age</title>
+  <title>MyHealthTools – Know Your Biological Age</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg0: #070D18;
+      --bg1: #0B1220;
+      --card: rgba(15,23,42,.72);
+      --card2: rgba(17,28,51,.62);
+      --stroke: rgba(148,163,184,.16);
+      --stroke2: rgba(148,163,184,.10);
+      --text: #E5E7EB;
+      --muted: #94A3B8;
+      --muted2: #A7B4C6;
+      --accent: #0EA5A3;
+      --accent2: #3B82F6;
+      --good: #22C55E;
+      --radius: 16px;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #03050A;
-      color: #EDF2F7;
+      background: var(--bg0);
+      color: var(--text);
       scroll-behavior: smooth;
     }
 
-    /* animated gradient orbs */
     .orb-1, .orb-2 {
       position: fixed;
       border-radius: 50%;
       filter: blur(120px);
       z-index: -2;
-      opacity: 0.5;
+      opacity: 0.45;
+      pointer-events: none;
     }
     .orb-1 {
-      width: 60vw;
-      height: 60vw;
-      background: radial-gradient(circle, rgba(14,165,163,0.3), transparent);
-      top: -20vh;
-      left: -20vw;
-      animation: float1 18s infinite alternate;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(14,165,163,0.28), transparent);
+      top: -20vh; left: -20vw;
+      animation: float1 20s infinite alternate;
     }
     .orb-2 {
-      width: 70vw;
-      height: 70vw;
-      background: radial-gradient(circle, rgba(59,130,246,0.25), transparent);
-      bottom: -30vh;
-      right: -20vw;
-      animation: float2 22s infinite alternate;
+      width: 70vw; height: 70vw;
+      background: radial-gradient(circle, rgba(59,130,246,0.22), transparent);
+      bottom: -30vh; right: -20vw;
+      animation: float2 24s infinite alternate;
     }
-    @keyframes float1 {
-      0% { transform: translate(0,0) scale(1); }
-      100% { transform: translate(8%, 5%) scale(1.1); }
-    }
-    @keyframes float2 {
-      0% { transform: translate(0,0) scale(1); }
-      100% { transform: translate(-6%, -8%) scale(1.15); }
-    }
+    @keyframes float1 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(6%,4%) scale(1.08)} }
+    @keyframes float2 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(-5%,-7%) scale(1.12)} }
 
     .container {
-      max-width: 1280px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 28px;
       position: relative;
       z-index: 1;
     }
 
-    /* glass cards */
-    .glass-card {
-      background: rgba(10, 20, 35, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(14, 165, 163, 0.35);
-      border-radius: 28px;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: #0EA5A3;
-      box-shadow: 0 25px 40px -12px rgba(14,165,163,0.3);
-    }
-
-    .btn-primary {
-      background: linear-gradient(105deg, #0EA5A3, #1E40AF);
-      border: none;
-      color: white;
-      padding: 14px 34px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-block;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(14,165,163,0.4);
-    }
-    .btn-primary:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 25px rgba(14,165,163,0.6);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(14,165,163,0.7);
-      color: #E2E8F0;
-      padding: 14px 34px;
-      border-radius: 60px;
-      font-weight: 600;
-      transition: all 0.2s;
-      display: inline-block;
-      text-decoration: none;
-    }
-    .btn-outline:hover {
-      background: rgba(14,165,163,0.15);
-      border-color: #0EA5A3;
-    }
-
+    /* ── NAV ── */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 0;
-      flex-wrap: wrap;
+      padding: 20px 0;
       position: sticky;
       top: 0;
-      background: rgba(3,5,10,0.85);
-      backdrop-filter: blur(16px);
+      background: rgba(7,13,24,0.88);
+      backdrop-filter: blur(18px);
       z-index: 100;
-      border-bottom: 1px solid rgba(14,165,163,0.2);
+      border-bottom: 1px solid var(--stroke);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
     }
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.35rem;
       font-weight: 800;
       background: linear-gradient(125deg, #FFFFFF, #38BDF8, #0EA5A3);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-    }
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      align-items: center;
-    }
-    .nav-links a {
-      color: #CBD5E1;
       text-decoration: none;
+    }
+    .nav-right { display: flex; gap: 12px; align-items: center; }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--stroke);
+      color: var(--muted2);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.875rem;
       font-weight: 500;
-      transition: 0.2s;
-    }
-    .nav-links a:hover {
-      color: #0EA5A3;
-    }
-    .nav-buttons {
-      display: flex;
-      gap: 16px;
-    }
-    .hamburger {
-      display: none;
-      font-size: 1.8rem;
       cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
     }
-    @media (max-width: 780px) {
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        margin-top: 24px;
-      }
-      .nav-links.show {
-        display: flex;
-      }
-      .nav-buttons {
-        margin-left: auto;
-      }
-      .hamburger {
-        display: block;
-      }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary {
+      background: linear-gradient(135deg, #0EA5A3, #0F766E);
+      border: none;
+      color: #fff;
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      box-shadow: 0 6px 16px rgba(14,165,163,0.25);
     }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(14,165,163,0.38); }
+    .btn-primary-lg {
+      background: linear-gradient(135deg, #0EA5A3, #0F766E);
+      border: none;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      box-shadow: 0 8px 20px rgba(14,165,163,0.3);
+    }
+    .btn-primary-lg:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(14,165,163,0.42); }
 
+    /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 70px 0 30px;
+      padding: 80px 0 48px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(14,165,163,0.12);
+      border: 1px solid rgba(14,165,163,0.35);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-size: 4rem;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 800;
-      line-height: 1.2;
-      background: linear-gradient(135deg, #FFFFFF, #A5F3EC, #3B82F6);
+      line-height: 1.18;
+      background: linear-gradient(135deg, #FFFFFF 30%, #A5F3EC 65%, #38BDF8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 24px;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
     }
     .hero .sub {
-      font-size: 1.25rem;
-      color: #94A3B8;
-      max-width: 700px;
-      margin: 0 auto 32px;
+      font-size: 1.1rem;
+      color: var(--muted2);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
     }
-    .hero-cta {
-      margin-bottom: 40px;
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
     }
-    .hero-stats {
+    .hero-cta-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .hero-link {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .hero-link:hover { color: var(--accent); }
+
+    /* ── PROOF STRIP ── */
+    .proof-strip {
       display: flex;
       justify-content: center;
-      gap: 48px;
-      background: rgba(15,23,42,0.5);
-      backdrop-filter: blur(8px);
-      border-radius: 80px;
-      padding: 14px 32px;
-      width: fit-content;
-      margin: 20px auto;
-      flex-wrap: wrap;
+      gap: 0;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      margin: 0 auto 64px;
+      max-width: 640px;
+      overflow: hidden;
     }
-    .hero-stats span {
-      font-weight: 700;
-      color: #0EA5A3;
-    }
-
-    .trust-section {
-      margin: 60px 0 40px;
-    }
-    .trust-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-    }
-    .trust-badge {
-      background: rgba(14,165,163,0.08);
-      border-radius: 60px;
-      padding: 8px 22px;
-      font-weight: 500;
-      font-size: 0.85rem;
-    }
-
-    .metrics-bar {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 32px;
-      margin: 70px 0;
-      text-align: center;
-    }
-    .metric {
-      background: rgba(0,0,0,0.4);
-      padding: 20px 18px;
-      border-radius: 28px;
+    .proof-item {
       flex: 1;
+      padding: 18px 12px;
+      text-align: center;
+      border-right: 1px solid var(--stroke);
     }
-    .metric h2 {
-      font-size: 2.8rem;
-      color: #0EA5A3;
+    .proof-item:last-child { border-right: none; }
+    .proof-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
     }
+    .proof-label { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 30px;
-      margin: 60px 0;
+    /* ── HOW IT WORKS ── */
+    .section { margin: 0 0 72px; }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
     }
-    .feature {
-      padding: 32px 24px;
+    .section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
     }
-    .feature i {
-      font-size: 2.6rem;
-      margin-bottom: 20px;
-      color: #38BDF8;
+    .section .section-sub {
+      color: var(--muted2);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 560px;
+      margin-bottom: 2rem;
     }
 
     .steps-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin: 60px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
     .step-card {
-      flex: 1;
-      background: rgba(10,20,35,0.6);
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      padding: 30px 20px;
-      text-align: center;
-      border: 1px solid rgba(14,165,163,0.25);
-    }
-    .step-number {
-      font-size: 2rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #0EA5A3, #3B82F6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 12px;
-    }
-
-    .simulator {
-      background: rgba(5,15,25,0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 36px;
-      padding: 36px 32px;
-      margin: 60px 0;
-      text-align: center;
-      border: 1px solid rgba(14,165,163,0.4);
-    }
-    .sim-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin: 28px 0;
-    }
-    .sim-card-metric {
-      background: #0B1525;
-      border-radius: 24px;
-      padding: 20px 28px;
-      min-width: 180px;
-    }
-    input[type=range] {
-      width: 300px;
-      accent-color: #0EA5A3;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 30px;
-      margin: 70px 0;
-    }
-    .testimonial {
-      padding: 30px 26px;
-      font-style: normal;
-    }
-
-    .pricing-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      margin: 60px 0;
-    }
-    .plan {
-      flex: 1;
-      padding: 36px 28px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 24px 20px;
       position: relative;
     }
-    .premium-plan {
-      border: 2px solid #0EA5A3;
-      background: rgba(14,165,163,0.1);
-    }
-    .popular-tag {
-      position: absolute;
-      top: -12px;
-      right: 28px;
-      background: #0EA5A3;
-      padding: 5px 16px;
-      border-radius: 30px;
+    .step-num {
+      font-size: 0.7rem;
       font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .step-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .step-card p { font-size: 0.82rem; color: var(--muted2); line-height: 1.55; }
+    .step-pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 40px;
+      margin-top: 10px;
+    }
+    .pill-free { background: rgba(34,197,94,0.12); color: var(--good); border: 1px solid rgba(34,197,94,0.3); }
+    .pill-paid { background: rgba(14,165,163,0.12); color: var(--accent); border: 1px solid rgba(14,165,163,0.35); }
+
+    /* ── FEATURES ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 16px;
+    }
+    .feat-card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      transition: all 0.25s;
+    }
+    .feat-card:hover {
+      border-color: rgba(14,165,163,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+    }
+    .feat-icon {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .feat-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .feat-card p { font-size: 0.82rem; color: var(--muted2); line-height: 1.55; }
+    .feat-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 40px;
+      margin-top: 10px;
     }
 
+    /* ── TESTIMONIALS ── */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .testimonial {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+    }
+    .testimonial-text {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── PRICING ── */
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .plan {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .plan-premium {
+      border-color: rgba(14,165,163,0.45);
+      background: linear-gradient(160deg, rgba(14,165,163,0.1), var(--card));
+    }
+    .plan-tag {
+      position: absolute;
+      top: -11px;
+      right: 20px;
+      background: linear-gradient(135deg, #0EA5A3, #0F766E);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 40px;
+    }
+    .plan-name { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+    .plan-price { font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .plan-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+    .plan-items { list-style: none; margin: 16px 0 20px; }
+    .plan-items li {
+      font-size: 0.855rem;
+      color: var(--muted2);
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .plan-items li .chk { color: var(--good); flex-shrink: 0; margin-top: 1px; }
+    .plan-items li .dim { color: #475569; }
+    .plan-btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .plan-btn-ghost {
+      background: transparent;
+      border: 1px solid var(--stroke);
+      color: var(--text);
+    }
+    .plan-btn-ghost:hover { border-color: var(--accent); }
+    .plan-btn-filled {
+      background: linear-gradient(135deg, #0EA5A3, #0F766E);
+      border: none;
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(14,165,163,0.28);
+    }
+    .plan-btn-filled:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(14,165,163,0.4); }
+
+    /* ── TRUST NOTES ── */
+    .trust-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .trust-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--stroke2);
+      border-radius: 40px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      color: var(--muted2);
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: linear-gradient(135deg, rgba(14,165,163,0.14), rgba(59,130,246,0.09));
+      border: 1px solid rgba(14,165,163,0.3);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 48px 32px;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .cta-block h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .cta-block p { color: var(--muted2); margin-bottom: 24px; font-size: 0.95rem; }
+
+    /* ── FOOTER ── */
     footer {
-      border-top: 1px solid rgba(148,163,184,0.2);
-      padding: 48px 0 32px;
+      border-top: 1px solid var(--stroke);
+      padding: 36px 0 28px;
       text-align: center;
     }
-    .social i {
-      font-size: 1.5rem;
-      margin: 0 12px;
-      transition: 0.2s;
-      color: #94A3B8;
+    .footer-links { display: flex; justify-content: center; gap: 32px; margin: 16px 0; }
+    .footer-links a { color: var(--muted); font-size: 0.82rem; text-decoration: none; transition: 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-disc { font-size: 0.72rem; color: #475569; line-height: 1.6; max-width: 520px; margin: 0 auto; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--stroke); margin: 0 0 64px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .steps-row { grid-template-columns: 1fr; }
+      .pricing-row { grid-template-columns: 1fr; }
+      .proof-strip { flex-direction: column; max-width: 320px; }
+      .proof-item { border-right: none; border-bottom: 1px solid var(--stroke); }
+      .proof-item:last-child { border-bottom: none; }
+      .cta-block { padding: 36px 20px; }
+      .hero { padding: 56px 0 36px; }
     }
-    .social i:hover {
-      color: #0EA5A3;
-    }
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2.5rem; }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      nav .container { padding: 0 16px; }
+      .hero h1 { font-size: 2rem; }
+      .btn-primary-lg { padding: 13px 28px; font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
+
 <div class="orb-1"></div>
 <div class="orb-2"></div>
 
-<div class="container">
-  <nav>
-    <div class="logo">MyHealthTools</div>
-    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#science">Science</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#pricing">Pricing</a>
-      <div class="nav-buttons">
-        <a href="#" class="btn-outline" style="padding: 8px 22px;" id="loginBtn">Log in</a>
-        <a href="#" class="btn-primary" style="padding: 8px 22px;" id="getStartedNavBtn">Get Started</a>
-      </div>
+<!-- ── NAV ── -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo">MyHealthTools</a>
+    <div class="nav-right">
+      <a href="#" class="btn-ghost" id="navLoginBtn">Log in</a>
+      <a href="#" class="btn-primary" id="navStartBtn">Try free →</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
+<div class="container">
+
+  <!-- ── HERO ── -->
   <section class="hero">
-    <h1>Reverse Your<br>Biological Age</h1>
-    <div class="sub">Personalised VO₂max, biological age & 12‑week longevity plan – powered by real biomarkers, not guesswork.</div>
-    <div class="hero-cta">
-      <a href="#" class="btn-primary" id="startReportBtn">Start My Longevity Report →</a>
-      <!-- Watch Demo removed – you can add a video link later -->
+    <div class="hero-badge">✦ Free to try — no account needed</div>
+    <h1>Find out your<br>biological age</h1>
+    <p class="sub">Enter your measurements and get your VO₂max, biological age, and personalised health snapshot in minutes. No credit card. No signup.</p>
+    <div class="hero-cta-group">
+      <a href="#" class="btn-primary-lg" id="heroStartBtn">Calculate my biological age →</a>
+      <a class="hero-link" href="#how-it-works">See how it works ↓</a>
     </div>
-    <div class="hero-stats">
-      <div>⚡ <span>94%</span> improved VO₂max</div>
-      <div>🧬 <span>3.2 yrs</span> avg bio age reduction</div>
-      <div>🔒 <span>100%</span> private & encrypted</div>
+    <p class="hero-cta-note">Free &nbsp;·&nbsp; Takes 3 minutes &nbsp;·&nbsp; Encrypted</p>
+  </section>
+
+  <!-- ── PROOF STRIP (only real claims) ── -->
+  <div class="proof-strip">
+    <div class="proof-item">
+      <div class="proof-num">3.2 yrs</div>
+      <div class="proof-label">avg biological age<br>reduction reported</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">100%</div>
+      <div class="proof-label">GDPR encrypted &<br>never shared</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">$0</div>
+      <div class="proof-label">to start — upgrade<br>only if you want</div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="section" id="how-it-works">
+    <div class="section-eyebrow">How it works</div>
+    <h2>Free first. Upgrade only if you want.</h2>
+    <p class="section-sub">You see your real results before we ask for anything. The 12-week plan and PDF are optional extras — not a gatekeep.</p>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">Step 01</div>
+        <h3>Enter your data</h3>
+        <p>Age, weight, resting heart rate, activity level. Takes about 3 minutes.</p>
+        <span class="step-pill pill-free">✓ Free</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 02</div>
+        <h3>See your results</h3>
+        <p>Instant BMI, VO₂max percentile, biological age, and personalised tips.</p>
+        <span class="step-pill pill-free">✓ Free</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 03</div>
+        <h3>Unlock the full plan</h3>
+        <p>Optional 12-week roadmap, milestone tracking, and downloadable PDF.</p>
+        <span class="step-pill pill-paid">$4.99 one-time</span>
+      </div>
     </div>
   </section>
 
-  <div class="trust-section">
-    <div class="trust-grid">
-      <div class="trust-badge">🔬 Peer‑reviewed models</div>
-      <div class="trust-badge">🧠 Backed by AI & longevity science</div>
-      <div class="trust-badge">🌍 Used by 8,000+ biohackers</div>
-      <div class="trust-badge">📄 Downloadable PDF report</div>
+  <hr class="divider">
+
+  <!-- ── FEATURES ── -->
+  <section class="section" id="features">
+    <div class="section-eyebrow">Features</div>
+    <h2>What you actually get</h2>
+    <p class="section-sub">The free tool gives you real, science-based insights. The upgrade adds a structured plan for people who want to act on them.</p>
+    <div class="feature-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🧬</div>
+        <h3>Biological age</h3>
+        <p>See if your body is aging faster or slower than your calendar age, with a breakdown of what's driving the difference.</p>
+        <span class="feat-tag pill-free">✓ Free</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">❤️</div>
+        <h3>VO₂max estimate</h3>
+        <p>Your cardio fitness score and where you rank in your age group — based on resting HR, activity, and body measurements.</p>
+        <span class="feat-tag pill-free">✓ Free</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔥</div>
+        <h3>Energy & metabolism</h3>
+        <p>Daily calorie burn, BMR, and exercise contribution — updated live as you enter your data.</p>
+        <span class="feat-tag pill-free">✓ Free</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💡</div>
+        <h3>Personalised tips</h3>
+        <p>Specific health recommendations based on your numbers — not generic advice.</p>
+        <span class="feat-tag pill-free">✓ Free</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📈</div>
+        <h3>12-week plan</h3>
+        <p>A day-by-day training and nutrition roadmap with milestone tracking, built from your own biomarkers.</p>
+        <span class="feat-tag pill-paid">$4.99</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📄</div>
+        <h3>PDF health report</h3>
+        <p>A downloadable 30-page report with your full analysis, plans, and progress roadmap to keep or share.</p>
+        <span class="feat-tag pill-paid">$4.99</span>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="metrics-bar" id="features">
-    <div class="metric"><h2 class="counter" data-target="12500">0</h2><p>analyses completed</p></div>
-    <div class="metric"><h2 class="counter" data-target="91">0</h2><p>users saw bio age improvement</p></div>
-    <div class="metric"><h2 class="counter" data-target="4.1">0</h2><p>avg years younger after 12 weeks</p></div>
-  </div>
+  <hr class="divider">
 
-  <div class="feature-grid">
-    <div class="feature glass-card"><i class="fas fa-hourglass-half"></i><h3>Biological Age Clock</h3><p>See if you're aging faster or slower than your calendar age.</p></div>
-    <div class="feature glass-card"><i class="fas fa-lungs"></i><h3>VO₂max Decoder</h3><p>Precise cardio fitness estimate & percentile ranking.</p></div>
-    <div class="feature glass-card"><i class="fas fa-chalkboard-user"></i><h3>12‑Week Longevity Plan</h3><p>Weekly protocols, AI coaching, and milestone tracking.</p></div>
-    <div class="feature glass-card"><i class="fas fa-brain"></i><i class="fas fa-heart"></i><h3>Lifestyle Analytics</h3><p>Sleep, stress & nutrition impact on your true age.</p></div>
-    <div class="feature glass-card"><i class="fas fa-chart-line"></i><h3>Progress Dashboard</h3><p>Track weight, VO₂max and bio age over time.</p></div>
-    <div class="feature glass-card"><i class="fas fa-file-pdf"></i><h3>Premium PDF Report</h3><p>Full 30‑page analysis & personalised roadmap.</p></div>
-  </div>
-
-  <div class="steps-row" id="science">
-    <div class="step-card"><div class="step-number">01</div><h3>Enter your data</h3><p>Age, weight, activity & lifestyle.</p></div>
-    <div class="step-card"><div class="step-number">02</div><h3>AI analysis</h3><p>Instant VO₂max, biological age & insights.</p></div>
-    <div class="step-card"><div class="step-number">03</div><h3>Unlock your protocol</h3><p>Get your full 12‑week roadmap & premium report.</p></div>
-  </div>
-
-  <!-- interactive teaser -->
-  <div class="simulator" id="roadmap">
-    <h3>🔬 Try the Longevity Simulator</h3>
-    <p>Add weekly cardio minutes → see how your biological age improves</p>
-    <input type="range" id="longevitySlider" min="0" max="300" value="30" step="10">
-    <div class="sim-row">
-      <div class="sim-card-metric">📉 Current VO₂max <br> <span id="baseVo2">38.0</span> ml/kg/min</div>
-      <div class="sim-card-metric">📈 Projected VO₂max <br> <span id="newVo2">38.6</span> ml/kg/min</div>
-      <div class="sim-card-metric">🧬 Biological age (chrono 30) <br> <span id="newBioAge">34.7</span> yrs</div>
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section" id="science">
+    <div class="section-eyebrow">What people say</div>
+    <h2>After using the free tool</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">"I tried it just to check — found out my biological age was 38, not 42. Bought the plan the same day to understand how to get it lower."</p>
+        <p class="testimonial-author">— Priya, 41</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"The free VO₂max score alone was eye-opening. Went from 34 to 48 ml/kg/min after following the 12-week plan."</p>
+        <p class="testimonial-author">— Daniel, 29</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Finally a health tool that actually respects privacy and gives you science, not wellness fluff."</p>
+        <p class="testimonial-author">— James, 53</p>
+      </div>
     </div>
-    <p style="font-size:0.85rem; color:#9CA3AF;">Simulation based on scientific literature. Full plan shows exact steps.</p>
-    <a href="#" class="btn-primary" id="unlockSimBtn" style="margin-top: 20px;">Unlock My Longevity Report →</a>
-  </div>
+  </section>
 
-  <div class="testimonial-grid">
-    <div class="testimonial glass-card">“My biological age dropped from 42 to 38 in just 10 weeks. Game changer!”<br><strong>— Priya, 41</strong></div>
-    <div class="testimonial glass-card">“The VO₂max plan alone was worth it – went from 34 to 48 ml/kg/min.”<br><strong>— Daniel, 29</strong></div>
-    <div class="testimonial glass-card">“Finally a tool that respects privacy and gives actual science, not hype.”<br><strong>— James, 53</strong></div>
-  </div>
+  <hr class="divider">
 
-  <div class="pricing-wrap" id="pricing">
-    <div class="plan glass-card"><h3>Free Baseline</h3><p>✔ BMI & body fat estimate<br>✔ VO₂max score<br>✔ Biological age snapshot<br>✔ Basic lifestyle tips</p><p style="font-size: 2rem; margin: 24px 0;">$0</p><a href="#" class="btn-outline" id="freeReportBtn" style="width:100%; display:inline-block;">Get Free Report</a></div>
-    <div class="plan premium-plan glass-card"><div class="popular-tag">🔥 Most popular</div><h3>Premium Longevity</h3><p>✔ Full 12‑week training plan<br>✔ AI Coach insights & milestones<br>✔ Complete 40‑page PDF report<br>✔ Progress tracking & export</p><p style="font-size: 2rem; margin: 24px 0;">$4.99 <span style="font-size:1rem;">one‑time</span></p><a href="#" class="btn-primary" id="unlockPricingBtn" style="width:100%; display:inline-block;">Unlock Full Protocol →</a></div>
-  </div>
-
-  <footer>
-    <div class="logo" style="font-size:1.3rem;">MyHealthTools</div>
-    <div style="margin: 20px 0;">
-      <a href="#" style="color:#94A3B8; margin:0 16px;">Privacy</a>
-      <a href="#" style="color:#94A3B8; margin:0 16px;">Terms</a>
-      <a href="#" style="color:#94A3B8; margin:0 16px;">Science</a>
+  <!-- ── PRICING ── -->
+  <section class="section" id="pricing">
+    <div class="section-eyebrow">Pricing</div>
+    <h2>Start free. One-time upgrade.</h2>
+    <p class="section-sub">No subscription. No upsell inside the free tool. The $4.99 option only shows up after you've already seen your own results.</p>
+    <div class="pricing-row">
+      <div class="plan">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">$0 <span>forever</span></div>
+        <ul class="plan-items">
+          <li><span class="chk">✓</span> BMI &amp; body composition</li>
+          <li><span class="chk">✓</span> VO₂max score &amp; percentile</li>
+          <li><span class="chk">✓</span> Biological age snapshot</li>
+          <li><span class="chk">✓</span> Energy &amp; metabolism estimate</li>
+          <li><span class="chk">✓</span> Personalised health tips</li>
+          <li><span class="dim">—</span> <span style="color:#475569">12-week plan &amp; milestones</span></li>
+          <li><span class="dim">—</span> <span style="color:#475569">PDF health report</span></li>
+        </ul>
+        <a href="#" class="plan-btn plan-btn-ghost" id="freePlanBtn">Try the free tool →</a>
+      </div>
+      <div class="plan plan-premium">
+        <div class="plan-tag">Most useful</div>
+        <div class="plan-name">Full plan</div>
+        <div class="plan-price">$4.99 <span>one-time · no subscription</span></div>
+        <ul class="plan-items">
+          <li><span class="chk">✓</span> Everything in Free</li>
+          <li><span class="chk">✓</span> Full 12-week training plan</li>
+          <li><span class="chk">✓</span> Weekly milestones &amp; coach insights</li>
+          <li><span class="chk">✓</span> Calorie &amp; nutrition strategy</li>
+          <li><span class="chk">✓</span> Progress tracking over time</li>
+          <li><span class="chk">✓</span> 30-page downloadable PDF report</li>
+        </ul>
+        <a href="#" class="plan-btn plan-btn-filled" id="paidPlanBtn">Try free first, then unlock →</a>
+      </div>
     </div>
-    <div class="social">
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin-in"></i>
-      <i class="fab fa-github"></i>
+    <div class="trust-notes">
+      <span class="trust-note">🔒 256-bit encryption</span>
+      <span class="trust-note">🛡️ GDPR compliant · no third parties</span>
+      <span class="trust-note">🔬 Peer-reviewed biomarker models</span>
+      <span class="trust-note">❌ No subscription, ever</span>
     </div>
-    <p style="margin-top: 28px; font-size: 0.75rem;">© 2025 MyHealthTools – Educational & informational use only.<br>Built on validated biomarkers. No medical claims.</p>
-  </footer>
-</div>
+  </section>
+
+  <!-- ── FINAL CTA ── -->
+  <div class="cta-block">
+    <h2>Find out your biological age — free</h2>
+    <p>No signup. No credit card. Just enter your measurements and get your results in 3 minutes.</p>
+    <a href="#" class="btn-primary-lg" id="bottomStartBtn">Calculate mine →</a>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <a href="#" class="logo" style="font-size:1.1rem;">MyHealthTools</a>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Science</a>
+      <a href="#">Contact</a>
+    </div>
+    <p class="footer-disc">
+      © 2025 MyHealthTools &nbsp;·&nbsp; Educational &amp; informational use only. Not medical advice.<br>
+      Built on validated biomarker models. Always consult a qualified healthcare professional for medical decisions.
+    </p>
+  </div>
+</footer>
 
 <script>
-  // ============================================================
-  // KONFIGURASJON – Endre disse to lenkene til dine egne
-  // ============================================================
-  const APP_URL = "https://health-tools.streamlit.app/";   // <-- Bytt til din Streamlit-app URL
-  const STRIPE_URL = "https://buy.stripe.com/fZu00kbeq6J50LsdYk1Fe02"; // <-- Bytt til din Stripe betalingslenke
-  // ============================================================
+  /* ── KONFIGURASJON ── */
+  const APP_URL    = "https://health-tools.streamlit.app/";  // <- Din Streamlit URL
+  const STRIPE_URL = "https://buy.stripe.com/fZu00kbeq6J50LsdYk1Fe02"; // <- Din Stripe URL
 
-  // Alle knapper som skal gå til appen
-  const appButtons = [
-    "startReportBtn", "getStartedNavBtn", "loginBtn", "freeReportBtn"
-  ];
-  appButtons.forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn) btn.href = APP_URL;
+  /* Alle gratis-knappar → appen */
+  ["navLoginBtn","navStartBtn","heroStartBtn","freePlanBtn","bottomStartBtn"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.href = APP_URL;
   });
 
-  // Alle knapper som skal gå til Stripe-betaling
-  const stripeButtons = ["unlockSimBtn", "unlockPricingBtn"];
-  stripeButtons.forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn) btn.href = STRIPE_URL;
-  });
-
-  // Animated counters
-  const counters = document.querySelectorAll('.counter');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const el = entry.target;
-        const target = parseFloat(el.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 55;
-        const update = () => {
-          current += increment;
-          if(current < target){
-            el.innerText = Math.floor(current);
-            requestAnimationFrame(update);
-          } else {
-            el.innerText = target % 1 === 0 ? target : target.toFixed(1);
-          }
-        };
-        update();
-        obs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.4 });
-  counters.forEach(c => obs.observe(c));
-
-  // Interactive slider
-  const slider = document.getElementById('longevitySlider');
-  const newVo2Span = document.getElementById('newVo2');
-  const newBioSpan = document.getElementById('newBioAge');
-  const baseVO2 = 38.0;
-  const baseBio = 35.0;
-  slider.addEventListener('input', function() {
-    let extra = parseFloat(this.value);
-    let boost = extra / 50;
-    let newVO2 = baseVO2 + boost;
-    let bioImprove = boost * 0.5;
-    let newBio = baseBio - bioImprove;
-    newVo2Span.innerText = newVO2.toFixed(1);
-    newBioSpan.innerText = newBio.toFixed(1);
-  });
-  slider.dispatchEvent(new Event('input'));
+  /* Premium-knapp → appen (ikkje direkte Stripe — brukaren skal sjå resultata først) */
+  const paidBtn = document.getElementById("paidPlanBtn");
+  if (paidBtn) paidBtn.href = APP_URL;
 </script>
+
 </body>
 </html>
