@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-68ZCX624Z4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,26 +13,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <!-- ── PRIMARY SEO ── -->
   <title>Biological Age Calculator – Free VO₂max & Health Tool | MyHealthTools</title>
   <meta name="description" content="Find out your biological age, VO₂max score, and personalised health insights in 3 minutes. Free, science-based, and GDPR encrypted. No signup needed.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://my-health-tools.com/">
 
-  <!-- ── OPEN GRAPH (Facebook, LinkedIn, iMessage previews) ── -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://my-health-tools.com/">
   <meta property="og:title" content="Biological Age Calculator – Free | MyHealthTools">
   <meta property="og:description" content="Find out your biological age and VO₂max in 3 minutes. Free, science-based, GDPR encrypted.">
   <meta property="og:image" content="https://my-health-tools.com/og-image.png">
 
-  <!-- ── TWITTER CARD ── -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Biological Age Calculator – Free | MyHealthTools">
   <meta name="twitter:description" content="Find out your biological age and VO₂max in 3 minutes. Free, science-based, GDPR encrypted.">
   <meta name="twitter:image" content="https://my-health-tools.com/og-image.png">
 
-  <!-- ── STRUCTURED DATA (tells Google exactly what this page is) ── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,570 +39,443 @@
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Web",
     "offers": [
-      {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free biological age and VO₂max calculator"
-      },
-      {
-        "@type": "Offer",
-        "price": "4.99",
-        "priceCurrency": "USD",
-        "description": "12-week personalised health plan and PDF report"
-      }
-    ],
-    "featureList": [
-      "Biological age calculator",
-      "VO₂max estimator",
-      "BMI calculator",
-      "12-week health plan",
-      "GDPR encrypted"
+      {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free biological age and VO₂max calculator"},
+      {"@type": "Offer", "price": "4.99", "priceCurrency": "USD", "description": "12-week personalised health plan and PDF report"}
     ]
   }
   </script>
 
-  <!-- ── FONTS ── -->
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-68ZCX624Z4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-68ZCX624Z4');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg0: #070D18;
-      --bg1: #0B1220;
-      --card: rgba(15,23,42,.72);
-      --card2: rgba(17,28,51,.62);
-      --stroke: rgba(148,163,184,.16);
-      --stroke2: rgba(148,163,184,.10);
-      --text: #E5E7EB;
-      --muted: #94A3B8;
-      --muted2: #A7B4C6;
-      --accent: #0EA5A3;
-      --accent2: #3B82F6;
-      --good: #22C55E;
-      --radius: 16px;
+      --bg0: #060B14;
+      --bg1: #0A1220;
+      --card: rgba(13,20,38,.75);
+      --stroke: rgba(148,163,184,.13);
+      --stroke-hi: rgba(14,165,163,.4);
+      --text: #EEF2F7;
+      --muted: #7F92A8;
+      --muted2: #A8B8CB;
+      --accent: #0EC8C4;
+      --accent-dark: #0A9997;
+      --good: #34D399;
+      --gold: #F59E0B;
+      --radius: 14px;
+      --radius-lg: 20px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg0);
       color: var(--text);
-      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .orb-1, .orb-2 {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(120px);
-      z-index: -2;
-      opacity: 0.45;
-      pointer-events: none;
+    /* ── AMBIENT BACKGROUND ── */
+    .bg-glow {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80vw 60vh at 10% -10%, rgba(14,200,196,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60vw 50vh at 90% 100%, rgba(59,130,246,0.06) 0%, transparent 55%);
     }
-    .orb-1 {
-      width: 60vw; height: 60vw;
-      background: radial-gradient(circle, rgba(14,165,163,0.28), transparent);
-      top: -20vh; left: -20vw;
-      animation: float1 20s infinite alternate;
-    }
-    .orb-2 {
-      width: 70vw; height: 70vw;
-      background: radial-gradient(circle, rgba(59,130,246,0.22), transparent);
-      bottom: -30vh; right: -20vw;
-      animation: float2 24s infinite alternate;
-    }
-    @keyframes float1 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(6%,4%) scale(1.08)} }
-    @keyframes float2 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(-5%,-7%) scale(1.12)} }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 28px;
-      position: relative;
-      z-index: 1;
-    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
     /* ── NAV ── */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      background: rgba(7,13,24,0.88);
-      backdrop-filter: blur(18px);
-      z-index: 100;
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(6,11,20,0.85);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--stroke);
     }
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 28px;
+    nav .inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
     }
     .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      background: linear-gradient(125deg, #FFFFFF, #38BDF8, #0EA5A3);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--text);
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
-    .nav-right { display: flex; gap: 12px; align-items: center; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
     .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--stroke);
-      color: var(--muted2);
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s;
-      display: inline-block;
+      color: var(--muted2); font-size: 0.875rem; font-weight: 500;
+      text-decoration: none; padding: 7px 18px;
+      border: 1px solid var(--stroke); border-radius: 40px;
+      transition: .2s; background: transparent;
     }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-primary {
-      background: linear-gradient(135deg, #0EA5A3, #0F766E);
-      border: none;
-      color: #fff;
-      padding: 8px 22px;
-      border-radius: 40px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s;
-      box-shadow: 0 6px 16px rgba(14,165,163,0.25);
+    .btn-ghost:hover { color: var(--accent); border-color: var(--stroke-hi); }
+    .btn-cta {
+      background: var(--accent); color: #020F0F;
+      font-size: 0.875rem; font-weight: 700;
+      text-decoration: none; padding: 8px 22px;
+      border-radius: 40px; transition: .2s;
+      box-shadow: 0 0 20px rgba(14,200,196,0.25);
     }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(14,165,163,0.38); }
-    .btn-primary-lg {
-      background: linear-gradient(135deg, #0EA5A3, #0F766E);
-      border: none;
-      color: #fff;
-      padding: 14px 36px;
-      border-radius: 40px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s;
-      box-shadow: 0 8px 20px rgba(14,165,163,0.3);
-    }
-    .btn-primary-lg:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(14,165,163,0.42); }
+    .btn-cta:hover { background: #12E0DC; box-shadow: 0 0 30px rgba(14,200,196,0.4); transform: translateY(-1px); }
 
     /* ── HERO ── */
     .hero {
+      padding: 96px 0 72px;
       text-align: center;
-      padding: 80px 0 48px;
     }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(14,165,163,0.12);
-      border: 1px solid rgba(14,165,163,0.35);
-      color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 40px;
-      margin-bottom: 1.5rem;
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(14,200,196,0.08);
+      border: 1px solid rgba(14,200,196,0.25);
+      color: var(--accent); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 40px; margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      font-weight: 800;
-      line-height: 1.18;
-      background: linear-gradient(135deg, #FFFFFF 30%, #A5F3EC 65%, #38BDF8 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 1.25rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.1;
       letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: var(--text);
     }
-    .hero .sub {
-      font-size: 1.1rem;
-      color: var(--muted2);
-      max-width: 560px;
-      margin: 0 auto 2rem;
-      line-height: 1.65;
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, #0EC8C4, #38BDF8);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .hero-cta-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1rem;
+    .hero-sub {
+      font-size: 1.1rem; color: var(--muted2); line-height: 1.65;
+      max-width: 520px; margin: 0 auto 36px;
     }
-    .hero-cta-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 4px;
+    .hero-actions {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
     }
-    .hero-link {
-      font-size: 0.875rem;
-      color: var(--muted);
-      text-decoration: underline;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-    .hero-link:hover { color: var(--accent); }
-
-    /* ── PROOF STRIP ── */
-    .proof-strip {
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      margin: 0 auto 64px;
-      max-width: 640px;
-      overflow: hidden;
-    }
-    .proof-item {
-      flex: 1;
-      padding: 18px 12px;
-      text-align: center;
-      border-right: 1px solid var(--stroke);
-    }
-    .proof-item:last-child { border-right: none; }
-    .proof-num {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .proof-label { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
-
-    /* ── HOW IT WORKS ── */
-    .section { margin: 0 0 72px; }
-    .section-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .section h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      margin-bottom: 10px;
+    .btn-hero {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #020F0F;
+      font-size: 1.05rem; font-weight: 800;
+      text-decoration: none; padding: 16px 40px;
+      border-radius: 50px; transition: .25s;
+      box-shadow: 0 0 40px rgba(14,200,196,0.35);
       letter-spacing: -0.01em;
     }
-    .section .section-sub {
-      color: var(--muted2);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 560px;
-      margin-bottom: 2rem;
-    }
+    .btn-hero:hover { background: #12E0DC; transform: translateY(-2px); box-shadow: 0 4px 50px rgba(14,200,196,0.5); }
+    .hero-meta { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
 
-    .steps-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .step-card {
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(3, 1fr);
       background: var(--card);
       border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      padding: 24px 20px;
-      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-width: 600px; margin: 0 auto 80px;
     }
-    .step-num {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
+    .stat {
+      padding: 20px 16px; text-align: center;
+      border-right: 1px solid var(--stroke);
     }
-    .step-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-    .step-card p { font-size: 0.82rem; color: var(--muted2); line-height: 1.55; }
-    .step-pill {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 40px;
-      margin-top: 10px;
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem; color: var(--accent);
+      line-height: 1; margin-bottom: 5px;
     }
-    .pill-free { background: rgba(34,197,94,0.12); color: var(--good); border: 1px solid rgba(34,197,94,0.3); }
-    .pill-paid { background: rgba(14,165,163,0.12); color: var(--accent); border: 1px solid rgba(14,165,163,0.35); }
+    .stat-label { font-size: 0.72rem; color: var(--muted); line-height: 1.45; }
 
-    /* ── FEATURES ── */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 16px;
+    /* ── SECTION BASE ── */
+    .section { margin-bottom: 88px; }
+    .eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
     }
-    .feat-card {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      padding: 24px 20px;
-      transition: all 0.25s;
-    }
-    .feat-card:hover {
-      border-color: rgba(14,165,163,0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.3);
-    }
-    .feat-icon {
-      font-size: 1.6rem;
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -0.02em; line-height: 1.15;
       margin-bottom: 12px;
     }
-    .feat-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-    .feat-card p { font-size: 0.82rem; color: var(--muted2); line-height: 1.55; }
-    .feat-tag {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 40px;
-      margin-top: 10px;
+    .section-desc { color: var(--muted2); font-size: 0.95rem; line-height: 1.65; max-width: 540px; margin-bottom: 36px; }
+
+    /* ── HOW IT WORKS ── */
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .step {
+      background: var(--card); padding: 28px 24px;
+      border: 1px solid var(--stroke);
+      position: relative; overflow: hidden;
+    }
+    .step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .step:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+    .step::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--stroke);
+    }
+    .step.free::before { background: var(--good); }
+    .step.paid::before { background: var(--accent); }
+    .step-n {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .step p { font-size: 0.84rem; color: var(--muted2); line-height: 1.55; }
+    .step-pill {
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      padding: 3px 11px; border-radius: 40px; margin-top: 14px;
+    }
+    .pill-free { background: rgba(52,211,153,0.1); color: var(--good); border: 1px solid rgba(52,211,153,0.3); }
+    .pill-paid { background: rgba(14,200,196,0.1); color: var(--accent); border: 1px solid rgba(14,200,196,0.3); }
+
+    /* ── FEATURES ── */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .feat {
+      background: var(--card); border: 1px solid var(--stroke);
+      border-radius: var(--radius); padding: 22px 20px;
+      transition: .25s;
+    }
+    .feat:hover { border-color: var(--stroke-hi); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+    .feat-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .feat h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .feat p { font-size: 0.82rem; color: var(--muted2); line-height: 1.55; }
+    .feat-badge {
+      display: inline-block; font-size: 0.67rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 40px; margin-top: 12px;
     }
 
-    /* ── TESTIMONIALS ── */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+    /* ── SOCIAL PROOF ── */
+    .proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .proof-card {
+      background: var(--card); border: 1px solid var(--stroke);
+      border-radius: var(--radius); padding: 24px 20px;
     }
-    .testimonial {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      padding: 24px 20px;
+    .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .proof-text {
+      font-size: 0.9rem; color: var(--text); line-height: 1.65;
+      font-style: italic; margin-bottom: 16px;
     }
-    .testimonial-text {
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.65;
-      margin-bottom: 14px;
-      font-style: italic;
-    }
-    .testimonial-author {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 500;
+    .proof-author { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+    .proof-note {
+      font-size: 0.72rem; color: var(--muted); text-align: center;
+      margin-top: 18px; font-style: italic;
     }
 
     /* ── PRICING ── */
-    .pricing-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .plan {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      padding: 28px 24px;
+      background: var(--card); border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg); padding: 30px 26px;
       position: relative;
     }
-    .plan-premium {
-      border-color: rgba(14,165,163,0.45);
-      background: linear-gradient(160deg, rgba(14,165,163,0.1), var(--card));
+    .plan-pro {
+      border-color: var(--stroke-hi);
+      background: linear-gradient(155deg, rgba(14,200,196,0.07), var(--card));
     }
-    .plan-tag {
-      position: absolute;
-      top: -11px;
-      right: 20px;
-      background: linear-gradient(135deg, #0EA5A3, #0F766E);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 40px;
+    .plan-badge {
+      position: absolute; top: -12px; right: 22px;
+      background: var(--accent); color: #020F0F;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 4px 14px; border-radius: 40px;
     }
-    .plan-name { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
-    .plan-price { font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
-    .plan-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
-    .plan-items { list-style: none; margin: 16px 0 20px; }
+    .plan-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
+    .plan-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem; color: var(--text); line-height: 1; margin-bottom: 6px;
+    }
+    .plan-price small { font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 400; color: var(--muted); }
+    .plan-desc { font-size: 0.82rem; color: var(--muted2); margin-bottom: 20px; line-height: 1.5; }
+    .plan-items { list-style: none; margin-bottom: 24px; }
     .plan-items li {
-      font-size: 0.855rem;
-      color: var(--muted2);
-      padding: 5px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      line-height: 1.4;
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 0.855rem; color: var(--muted2); padding: 5px 0; line-height: 1.4;
     }
-    .plan-items li .chk { color: var(--good); flex-shrink: 0; margin-top: 1px; }
-    .plan-items li .dim { color: #475569; }
+    .chk { color: var(--good); flex-shrink: 0; margin-top: 1px; font-size: 0.9rem; }
+    .dim { color: #374151; flex-shrink: 0; }
+    .plan-items li.dim-item { color: #374151; }
     .plan-btn {
-      display: block;
-      width: 100%;
-      padding: 11px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.2s;
+      display: block; width: 100%; padding: 13px;
+      border-radius: 40px; font-size: 0.92rem; font-weight: 700;
+      text-align: center; text-decoration: none; cursor: pointer;
+      transition: .2s; border: none;
     }
-    .plan-btn-ghost {
-      background: transparent;
-      border: 1px solid var(--stroke);
-      color: var(--text);
+    .plan-btn-outline {
+      background: transparent; border: 1px solid var(--stroke); color: var(--text);
     }
-    .plan-btn-ghost:hover { border-color: var(--accent); }
-    .plan-btn-filled {
-      background: linear-gradient(135deg, #0EA5A3, #0F766E);
-      border: none;
-      color: #fff;
-      box-shadow: 0 6px 16px rgba(14,165,163,0.28);
+    .plan-btn-outline:hover { border-color: var(--stroke-hi); color: var(--accent); }
+    .plan-btn-fill {
+      background: var(--accent); color: #020F0F;
+      box-shadow: 0 0 28px rgba(14,200,196,0.3);
     }
-    .plan-btn-filled:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(14,165,163,0.4); }
+    .plan-btn-fill:hover { background: #12E0DC; transform: translateY(-1px); box-shadow: 0 4px 36px rgba(14,200,196,0.45); }
 
-    /* ── TRUST NOTES ── */
-    .trust-notes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+    .trust-row {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;
     }
-    .trust-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--stroke2);
-      border-radius: 40px;
-      padding: 6px 14px;
-      font-size: 0.78rem;
-      color: var(--muted2);
+    .trust-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.025); border: 1px solid var(--stroke);
+      border-radius: 40px; padding: 6px 14px;
+      font-size: 0.77rem; color: var(--muted2);
     }
 
-    /* ── CTA BLOCK ── */
-    .cta-block {
-      background: linear-gradient(135deg, rgba(14,165,163,0.14), rgba(59,130,246,0.09));
-      border: 1px solid rgba(14,165,163,0.3);
-      border-radius: calc(var(--radius) + 4px);
-      padding: 48px 32px;
-      text-align: center;
-      margin-bottom: 64px;
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, rgba(14,200,196,0.1), rgba(59,130,246,0.07));
+      border: 1px solid rgba(14,200,196,0.2);
+      border-radius: var(--radius-lg);
+      padding: 60px 32px; text-align: center;
+      margin-bottom: 80px; position: relative; overflow: hidden;
     }
-    .cta-block h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.01em; }
-    .cta-block p { color: var(--muted2); margin-bottom: 24px; font-size: 0.95rem; }
+    .final-cta::before {
+      content: ''; position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(14,200,196,0.12), transparent);
+      top: -100px; left: 50%; transform: translateX(-50%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .final-cta h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .final-cta p { color: var(--muted2); font-size: 1rem; margin-bottom: 28px; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--stroke); margin: 0 0 80px; }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--stroke);
-      padding: 36px 0 28px;
+      padding: 40px 0 30px;
+    }
+    .footer-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
       text-align: center;
     }
-    .footer-links { display: flex; justify-content: center; gap: 32px; margin: 16px 0; }
-    .footer-links a { color: var(--muted); font-size: 0.82rem; text-decoration: none; transition: 0.2s; }
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; color: var(--text); text-decoration: none;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { color: var(--muted); font-size: 0.82rem; text-decoration: none; transition: .2s; }
     .footer-links a:hover { color: var(--accent); }
-    .footer-disc { font-size: 0.72rem; color: #475569; line-height: 1.6; max-width: 520px; margin: 0 auto; }
-
-    /* ── DIVIDER ── */
-    .divider { border: none; border-top: 1px solid var(--stroke); margin: 0 0 64px; }
+    .footer-copy { font-size: 0.72rem; color: #3D5066; line-height: 1.65; max-width: 500px; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .steps-row { grid-template-columns: 1fr; }
-      .pricing-row { grid-template-columns: 1fr; }
-      .proof-strip { flex-direction: column; max-width: 320px; }
-      .proof-item { border-right: none; border-bottom: 1px solid var(--stroke); }
-      .proof-item:last-child { border-bottom: none; }
-      .cta-block { padding: 36px 20px; }
-      .hero { padding: 56px 0 36px; }
+    @media (max-width: 720px) {
+      .steps { grid-template-columns: 1fr; gap: 10px; }
+      .step:first-child { border-radius: var(--radius); }
+      .step:last-child { border-radius: var(--radius); }
+      .feat-grid { grid-template-columns: 1fr 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr; max-width: 280px; }
+      .stat { border-right: none; border-bottom: 1px solid var(--stroke); }
+      .stat:last-child { border-bottom: none; }
+      .hero { padding: 64px 0 48px; }
+      .final-cta { padding: 40px 20px; }
     }
     @media (max-width: 480px) {
-      .container { padding: 0 16px; }
-      nav .container { padding: 0 16px; }
-      .hero h1 { font-size: 2rem; }
-      .btn-primary-lg { padding: 13px 28px; font-size: 0.95rem; }
+      .container { padding: 0 18px; }
+      nav .inner { padding: 0 18px; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .btn-hero { padding: 14px 30px; font-size: 0.98rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
     }
   </style>
 </head>
 <body>
+<div class="bg-glow"></div>
 
-<div class="orb-1"></div>
-<div class="orb-2"></div>
-
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
-  <div class="container">
-    <a href="#" class="logo">MyHealthTools</a>
-    <div class="nav-right">
-      <a href="#" class="btn-ghost" id="navLoginBtn">Log in</a>
-      <a href="#" class="btn-primary" id="navStartBtn">Try free →</a>
+  <div class="inner">
+    <a href="#" class="logo">MyHealth<span>Tools</span></a>
+    <div class="nav-links">
+      <a href="#how-it-works" class="btn-ghost">How it works</a>
+      <a href="https://app.my-health-tools.com" class="btn-cta" id="navCta">Try free →</a>
     </div>
   </div>
 </nav>
 
 <div class="container">
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">✦ Free to try — no account needed</div>
-    <h1>Find out your<br>biological age</h1>
-    <p class="sub">Enter your measurements and get your VO₂max, biological age, and personalised health snapshot in minutes. No credit card. No signup.</p>
-    <div class="hero-cta-group">
-      <a href="#" class="btn-primary-lg" id="heroStartBtn">Calculate my biological age →</a>
-      <a class="hero-link" href="#how-it-works">See how it works ↓</a>
+    <div class="hero-eyebrow">✦ No signup · No credit card · 3 minutes</div>
+    <h1>How old is your<br>body, <em>really?</em></h1>
+    <p class="hero-sub">Enter your measurements and get your biological age, VO₂max score, and personalised health snapshot — instantly, for free.</p>
+    <div class="hero-actions">
+      <a href="https://app.my-health-tools.com" class="btn-hero" id="heroCta">
+        Calculate my biological age →
+      </a>
+      <span class="hero-meta">Free &nbsp;·&nbsp; Science-based &nbsp;·&nbsp; GDPR encrypted</span>
     </div>
-    <p class="hero-cta-note">Free &nbsp;·&nbsp; Takes 3 minutes &nbsp;·&nbsp; Encrypted</p>
   </section>
 
-  <!-- ── PROOF STRIP (only real claims) ── -->
-  <div class="proof-strip">
-    <div class="proof-item">
-      <div class="proof-num">3.2 yrs</div>
-      <div class="proof-label">avg biological age<br>reduction reported</div>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">to start — no card needed</div>
     </div>
-    <div class="proof-item">
-      <div class="proof-num">100%</div>
-      <div class="proof-label">GDPR encrypted &<br>never shared</div>
+    <div class="stat">
+      <div class="stat-num">3 min</div>
+      <div class="stat-label">to your full results</div>
     </div>
-    <div class="proof-item">
-      <div class="proof-num">$0</div>
-      <div class="proof-label">to start — upgrade<br>only if you want</div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">GDPR encrypted, never shared</div>
     </div>
   </div>
 
-  <!-- ── HOW IT WORKS ── -->
+  <!-- HOW IT WORKS -->
   <section class="section" id="how-it-works">
-    <div class="section-eyebrow">How it works</div>
-    <h2>Free first. Upgrade only if you want.</h2>
-    <p class="section-sub">You see your real results before we ask for anything. The 12-week plan and PDF are optional extras — not a gatekeep.</p>
-    <div class="steps-row">
-      <div class="step-card">
-        <div class="step-num">Step 01</div>
+    <div class="eyebrow">How it works</div>
+    <h2 class="section-title">Free results first. No strings.</h2>
+    <p class="section-desc">You see your real numbers before we ask for anything. The 12-week plan is an optional extra — not a paywall on your own data.</p>
+    <div class="steps">
+      <div class="step free">
+        <div class="step-n">Step 01</div>
         <h3>Enter your data</h3>
         <p>Age, weight, resting heart rate, activity level. Takes about 3 minutes.</p>
         <span class="step-pill pill-free">✓ Free</span>
       </div>
-      <div class="step-card">
-        <div class="step-num">Step 02</div>
+      <div class="step free">
+        <div class="step-n">Step 02</div>
         <h3>See your results</h3>
-        <p>Instant BMI, VO₂max percentile, biological age, and personalised tips.</p>
+        <p>Instant biological age, VO₂max percentile, BMI, and personalised health tips based on your numbers.</p>
         <span class="step-pill pill-free">✓ Free</span>
       </div>
-      <div class="step-card">
-        <div class="step-num">Step 03</div>
-        <h3>Unlock the full plan</h3>
-        <p>Optional 12-week roadmap, milestone tracking, and downloadable PDF.</p>
+      <div class="step paid">
+        <div class="step-n">Step 03</div>
+        <h3>Unlock your plan</h3>
+        <p>Optional 12-week roadmap, milestone tracking, and a downloadable PDF report — only if you want to act on what you find.</p>
         <span class="step-pill pill-paid">$4.99 one-time</span>
       </div>
     </div>
@@ -614,158 +483,163 @@
 
   <hr class="divider">
 
-  <!-- ── FEATURES ── -->
+  <!-- FEATURES -->
   <section class="section" id="features">
-    <div class="section-eyebrow">Features</div>
-    <h2>What you actually get</h2>
-    <p class="section-sub">The free tool gives you real, science-based insights. The upgrade adds a structured plan for people who want to act on them.</p>
-    <div class="feature-grid">
-      <div class="feat-card">
+    <div class="eyebrow">What you get</div>
+    <h2 class="section-title">Real insights, not wellness fluff</h2>
+    <p class="section-desc">Every metric is based on peer-reviewed biomarker models. The free tool gives you real data. The upgrade gives you a plan to change it.</p>
+    <div class="feat-grid">
+      <div class="feat">
         <div class="feat-icon">🧬</div>
         <h3>Biological age</h3>
-        <p>See if your body is aging faster or slower than your calendar age, with a breakdown of what's driving the difference.</p>
-        <span class="feat-tag pill-free">✓ Free</span>
+        <p>See if your body is aging faster or slower than your calendar age, with a breakdown of what's driving the gap.</p>
+        <span class="feat-badge pill-free">✓ Free</span>
       </div>
-      <div class="feat-card">
+      <div class="feat">
         <div class="feat-icon">❤️</div>
         <h3>VO₂max estimate</h3>
-        <p>Your cardio fitness score and where you rank in your age group — based on resting HR, activity, and body measurements.</p>
-        <span class="feat-tag pill-free">✓ Free</span>
+        <p>Your cardio fitness score and where you rank in your age group — based on resting HR, activity, and body metrics.</p>
+        <span class="feat-badge pill-free">✓ Free</span>
       </div>
-      <div class="feat-card">
+      <div class="feat">
         <div class="feat-icon">🔥</div>
         <h3>Energy & metabolism</h3>
-        <p>Daily calorie burn, BMR, and exercise contribution — updated live as you enter your data.</p>
-        <span class="feat-tag pill-free">✓ Free</span>
+        <p>Daily calorie burn, BMR, and exercise contribution — calculated live from your inputs.</p>
+        <span class="feat-badge pill-free">✓ Free</span>
       </div>
-      <div class="feat-card">
+      <div class="feat">
         <div class="feat-icon">💡</div>
         <h3>Personalised tips</h3>
-        <p>Specific health recommendations based on your numbers — not generic advice.</p>
-        <span class="feat-tag pill-free">✓ Free</span>
+        <p>Specific recommendations based on your actual numbers — not generic advice that applies to everyone.</p>
+        <span class="feat-badge pill-free">✓ Free</span>
       </div>
-      <div class="feat-card">
+      <div class="feat">
         <div class="feat-icon">📈</div>
         <h3>12-week plan</h3>
-        <p>A day-by-day training and nutrition roadmap with milestone tracking, built from your own biomarkers.</p>
-        <span class="feat-tag pill-paid">$4.99</span>
+        <p>A week-by-week training and nutrition roadmap with milestone tracking, built from your own biomarkers.</p>
+        <span class="feat-badge pill-paid">$4.99</span>
       </div>
-      <div class="feat-card">
+      <div class="feat">
         <div class="feat-icon">📄</div>
         <h3>PDF health report</h3>
-        <p>A downloadable 30-page report with your full analysis, plans, and progress roadmap to keep or share.</p>
-        <span class="feat-tag pill-paid">$4.99</span>
+        <p>A downloadable report with your full analysis, plans, and progress roadmap — yours to keep or share with a doctor.</p>
+        <span class="feat-badge pill-paid">$4.99</span>
       </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- ── TESTIMONIALS ── -->
-  <section class="section" id="science">
-    <div class="section-eyebrow">What people say</div>
-    <h2>After using the free tool</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial">
-        <p class="testimonial-text">"I tried it just to check — found out my biological age was 38, not 42. Bought the plan the same day to understand how to get it lower."</p>
-        <p class="testimonial-author">— Priya, 41</p>
+  <!-- SOCIAL PROOF -->
+  <section class="section">
+    <div class="eyebrow">Early users</div>
+    <h2 class="section-title">What people found out</h2>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p class="proof-text">"I expected a basic BMI calculator. Instead I got a detailed breakdown of my biological age and why. Bought the plan the same day."</p>
+        <p class="proof-author">— Beta user, 41 · Norway</p>
       </div>
-      <div class="testimonial">
-        <p class="testimonial-text">"The free VO₂max score alone was eye-opening. Went from 34 to 48 ml/kg/min after following the 12-week plan."</p>
-        <p class="testimonial-author">— Daniel, 29</p>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p class="proof-text">"The VO₂max score alone was eye-opening. Never had a tool explain cardio fitness this clearly without needing a lab test."</p>
+        <p class="proof-author">— Beta user, 29 · UK</p>
       </div>
-      <div class="testimonial">
-        <p class="testimonial-text">"Finally a health tool that actually respects privacy and gives you science, not wellness fluff."</p>
-        <p class="testimonial-author">— James, 53</p>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p class="proof-text">"Finally a health tool that gives you the science and respects your privacy. No account, no nonsense, just results."</p>
+        <p class="proof-author">— Beta user, 53 · Germany</p>
       </div>
     </div>
+    <p class="proof-note">Feedback from early beta users. Individual results vary.</p>
   </section>
 
   <hr class="divider">
 
-  <!-- ── PRICING ── -->
+  <!-- PRICING -->
   <section class="section" id="pricing">
-    <div class="section-eyebrow">Pricing</div>
-    <h2>Start free. One-time upgrade.</h2>
-    <p class="section-sub">No subscription. No upsell inside the free tool. The $4.99 option only shows up after you've already seen your own results.</p>
-    <div class="pricing-row">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="section-title">Start free. One-time upgrade.</h2>
+    <p class="section-desc">No subscription. No upsell inside the free tool. The $4.99 option appears after you've already seen your own results.</p>
+    <div class="pricing-grid">
       <div class="plan">
-        <div class="plan-name">Free</div>
-        <div class="plan-price">$0 <span>forever</span></div>
+        <div class="plan-label">Free</div>
+        <div class="plan-price">$0 <small>forever</small></div>
+        <p class="plan-desc">Everything you need to understand where you stand.</p>
         <ul class="plan-items">
-          <li><span class="chk">✓</span> BMI &amp; body composition</li>
-          <li><span class="chk">✓</span> VO₂max score &amp; percentile</li>
+          <li><span class="chk">✓</span> BMI & body composition</li>
+          <li><span class="chk">✓</span> VO₂max score & percentile</li>
           <li><span class="chk">✓</span> Biological age snapshot</li>
-          <li><span class="chk">✓</span> Energy &amp; metabolism estimate</li>
+          <li><span class="chk">✓</span> Energy & metabolism estimate</li>
           <li><span class="chk">✓</span> Personalised health tips</li>
-          <li><span class="dim">—</span> <span style="color:#475569">12-week plan &amp; milestones</span></li>
-          <li><span class="dim">—</span> <span style="color:#475569">PDF health report</span></li>
+          <li class="dim-item"><span class="dim">—</span> 12-week training plan</li>
+          <li class="dim-item"><span class="dim">—</span> PDF health report</li>
         </ul>
-        <a href="#" class="plan-btn plan-btn-ghost" id="freePlanBtn">Try the free tool →</a>
+        <a href="https://app.my-health-tools.com" class="plan-btn plan-btn-outline" id="freePlanBtn">Try the free tool →</a>
       </div>
-      <div class="plan plan-premium">
-        <div class="plan-tag">Most useful</div>
-        <div class="plan-name">Full plan</div>
-        <div class="plan-price">$4.99 <span>one-time · no subscription</span></div>
+      <div class="plan plan-pro">
+        <div class="plan-badge">Most useful</div>
+        <div class="plan-label">Full plan</div>
+        <div class="plan-price">$4.99 <small>one-time · no subscription</small></div>
+        <p class="plan-desc">For people who want to act on what they find, not just see it.</p>
         <ul class="plan-items">
           <li><span class="chk">✓</span> Everything in Free</li>
           <li><span class="chk">✓</span> Full 12-week training plan</li>
-          <li><span class="chk">✓</span> Weekly milestones &amp; coach insights</li>
-          <li><span class="chk">✓</span> Calorie &amp; nutrition strategy</li>
+          <li><span class="chk">✓</span> Weekly milestones & coach insights</li>
+          <li><span class="chk">✓</span> Calorie & nutrition strategy</li>
           <li><span class="chk">✓</span> Progress tracking over time</li>
           <li><span class="chk">✓</span> 30-page downloadable PDF report</li>
         </ul>
-        <a href="#" class="plan-btn plan-btn-filled" id="paidPlanBtn">Try free first, then unlock →</a>
+        <a href="https://app.my-health-tools.com" class="plan-btn plan-btn-fill" id="paidPlanBtn">Try free first, then unlock →</a>
       </div>
     </div>
-    <div class="trust-notes">
-      <span class="trust-note">🔒 256-bit encryption</span>
-      <span class="trust-note">🛡️ GDPR compliant · no third parties</span>
-      <span class="trust-note">🔬 Peer-reviewed biomarker models</span>
-      <span class="trust-note">❌ No subscription, ever</span>
+    <div class="trust-row">
+      <span class="trust-chip">🔒 256-bit encryption</span>
+      <span class="trust-chip">🛡️ GDPR compliant · no third parties</span>
+      <span class="trust-chip">🔬 Peer-reviewed biomarker models</span>
+      <span class="trust-chip">❌ No subscription, ever</span>
     </div>
   </section>
 
-  <!-- ── FINAL CTA ── -->
-  <div class="cta-block">
+  <!-- FINAL CTA -->
+  <div class="final-cta">
     <h2>Find out your biological age — free</h2>
     <p>No signup. No credit card. Just enter your measurements and get your results in 3 minutes.</p>
-    <a href="#" class="btn-primary-lg" id="bottomStartBtn">Calculate mine →</a>
+    <a href="https://app.my-health-tools.com" class="btn-hero" id="bottomCta">Calculate mine →</a>
   </div>
 
-</div><!-- /container -->
+</div>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
-    <a href="#" class="logo" style="font-size:1.1rem;">MyHealthTools</a>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Science</a>
-      <a href="#">Contact</a>
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">MyHealth<span>Tools</span></a>
+      <div class="footer-links">
+        <a href="https://app.my-health-tools.com/privacy" target="_blank">Privacy Policy</a>
+        <a href="https://app.my-health-tools.com/terms" target="_blank">Terms of Use</a>
+        <a href="mailto:contact@my-health-tools.com">Contact</a>
+      </div>
+      <p class="footer-copy">
+        © 2025 MyHealthTools &nbsp;·&nbsp; For educational and informational use only. Not medical advice.<br>
+        Built on validated biomarker models. Always consult a qualified healthcare professional for medical decisions.
+      </p>
     </div>
-    <p class="footer-disc">
-      © 2025 MyHealthTools &nbsp;·&nbsp; Educational &amp; informational use only. Not medical advice.<br>
-      Built on validated biomarker models. Always consult a qualified healthcare professional for medical decisions.
-    </p>
   </div>
 </footer>
 
 <script>
-  /* ── KONFIGURASJON ── */
-  const APP_URL    = "https://app.my-health-tools.com/";  // <- Din Railway-app
-  const STRIPE_URL = "https://buy.stripe.com/fZu00kbeq6J50LsdYk1Fe02"; // <- Din Stripe URL
-
-  /* Alle gratis-knappar → appen */
-  ["navLoginBtn","navStartBtn","heroStartBtn","freePlanBtn","bottomStartBtn"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.href = APP_URL;
+  // Track CTA clicks in Google Analytics
+  document.querySelectorAll('a[href="https://app.my-health-tools.com"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_to_app', {
+          'event_category': 'CTA',
+          'event_label': el.id || 'unknown'
+        });
+      }
+    });
   });
-
-  /* Premium-knapp → appen (ikkje direkte Stripe — brukaren skal sjå resultata først) */
-  const paidBtn = document.getElementById("paidPlanBtn");
-  if (paidBtn) paidBtn.href = APP_URL;
 </script>
 
 </body>
