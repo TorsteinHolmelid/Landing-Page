@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-68ZCX624Z4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-68ZCX624Z4');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Resting Heart Rate Chart by Age: What's Normal? | MyHealthTools</title>
+  <meta name="description" content="Full resting heart rate chart by age and fitness level, what counts as normal, and what a high or low resting HR means for your health.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://my-health-tools.com/blog/resting-heart-rate-chart-by-age.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://my-health-tools.com/blog/resting-heart-rate-chart-by-age.html">
+  <meta property="og:title" content="Resting Heart Rate Chart by Age: What's Normal?">
+  <meta property="og:description" content="Full resting heart rate chart by age and fitness level, what counts as normal, and what a high or low resting HR means for your health.">
+  <meta property="og:image" content="https://my-health-tools.com/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resting Heart Rate Chart by Age: What's Normal?">
+  <meta name="twitter:description" content="Full resting heart rate chart by age and fitness level, what counts as normal, and what a high or low resting HR means for your health.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Resting Heart Rate Chart by Age: What's Normal?",
+    "description": "Full resting heart rate chart by age and fitness level, what counts as normal, and what a high or low resting HR means for your health.",
+    "author": { "@type": "Organization", "name": "MyHealthTools" },
+    "datePublished": "2026-06-19",
+    "dateModified": "2026-06-19"
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230EA5A3'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='20' font-weight='bold' fill='%23ffffff'>M</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg0: #060B14; --bg1: #0A1220; --card: rgba(13,20,38,.75);
+      --stroke: rgba(148,163,184,.13); --text: #EEF2F7;
+      --muted: #7F92A8; --muted2: #A8B8CB; --accent: #0EC8C4; --radius: 14px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--bg0); color:var(--text); -webkit-font-smoothing:antialiased; line-height:1.7; }
+    .container { max-width:820px; margin:0 auto; padding:0 24px; }
+    nav { position:sticky; top:0; z-index:200; background:rgba(6,11,20,0.92); backdrop-filter:blur(20px); border-bottom:1px solid var(--stroke); padding:14px 0; }
+    nav .inner { max-width:820px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--text); text-decoration:none; }
+    .logo span { color:var(--accent); }
+    .nav-link { color:var(--muted2); text-decoration:none; font-size:0.9rem; font-weight:500; transition:color 0.2s; }
+    .nav-link:hover { color:var(--accent); }
+    article { padding:40px 0 50px; }
+    h1 { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,2.8rem); line-height:1.2; margin-bottom:8px; }
+    .meta { color:var(--muted); font-size:0.85rem; border-bottom:1px solid var(--stroke); padding-bottom:20px; margin-bottom:30px; }
+    .content h2 { font-family:'DM Serif Display',serif; font-size:1.6rem; margin-top:40px; margin-bottom:10px; color:var(--text); }
+    .content h3 { font-size:1.2rem; margin-top:25px; margin-bottom:8px; color:var(--accent); }
+    .content p { color:var(--muted2); margin-bottom:18px; font-size:1.05rem; }
+    .content strong { color:#ffffff; }
+    .content ul, .content ol { color:var(--muted2); margin-left:20px; margin-bottom:20px; }
+    .content li { margin-bottom:6px; }
+    .content blockquote { background:rgba(14,200,196,0.06); border-left:4px solid var(--accent); padding:16px 20px; border-radius:0 8px 8px 0; margin:20px 0; font-style:italic; color:#d1d9e6; }
+    .content table { width:100%; border-collapse:collapse; font-size:0.85rem; margin:20px 0; background:var(--card); border-radius:var(--radius); overflow:hidden; }
+    .content th { background:rgba(14,200,196,0.15); color:var(--accent); font-weight:700; padding:12px 8px; text-align:center; }
+    .content td { padding:10px 8px; text-align:center; color:var(--muted2); border-bottom:1px solid rgba(148,163,184,0.08); }
+    .content td:first-child { font-weight:600; color:var(--text); }
+    .table-caption { font-size:0.75rem; color:var(--muted); padding:10px 4px 4px; text-align:right; }
+    .cta-box { background:linear-gradient(145deg, rgba(14,200,196,0.08), rgba(13,20,38,0.8)); border:1px solid rgba(14,200,196,0.3); border-radius:var(--radius); padding:35px 30px; text-align:center; margin:45px 0 20px; }
+    .cta-box h3 { font-family:'DM Serif Display',serif; font-size:1.8rem; color:#fff; margin-bottom:6px; }
+    .cta-box p { color:var(--muted2); margin-bottom:15px; }
+    .btn-cta { display:inline-block; background:var(--accent); color:#020F0F; font-weight:800; padding:14px 36px; border-radius:50px; text-decoration:none; font-size:1.05rem; box-shadow:0 0 30px rgba(14,200,196,0.25); transition:0.2s; }
+    .btn-cta:hover { background:#12E0DC; transform:scale(1.02); }
+    footer { border-top:1px solid var(--stroke); padding:30px 0; text-align:center; color:#3D5066; font-size:0.8rem; }
+    footer a { color:var(--accent); text-decoration:none; }
+    @media (max-width:600px) { .container { padding:0 16px; } .cta-box { padding:25px 16px; } .content table { font-size:0.75rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="logo">MyHealth<span>Tools</span></a>
+    <div>
+      <a href="/blog/" class="nav-link" style="margin-right:16px;">📝 Blog</a>
+      <a href="https://app.my-health-tools.com" class="nav-link" style="color:var(--accent);font-weight:600;">App →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <article>
+    <h1>Resting Heart Rate Chart by Age: What's Normal?</h1>
+    <div class="meta">
+      <span>Reading time: 5 minutes</span> &middot; 
+      <span>Target keyword: resting heart rate chart by age</span>
+    </div>
+
+    <div class="content">
+      <p>Your smartwatch just flagged your resting heart rate, and now you're wondering whether the number it gave you is something to worry about. Here's the full picture — what's normal, what affects it, and when it actually matters.</p>
+
+      <h2>What is resting heart rate, exactly?</h2>
+      <p>Resting heart rate (RHR) is the number of times your heart beats per minute while you're at complete rest — typically measured first thing in the morning, before getting out of bed, before caffeine, and before any physical activity.</p>
+      <p>It's one of the simplest and most useful health markers available, because it reflects how efficiently your heart works without you having to do anything. A lower resting heart rate generally means your heart pumps more blood per beat (higher stroke volume) — a hallmark of good cardiovascular fitness.</p>
+
+      <h2>Normal resting heart rate by age</h2>
+      <p>The American Heart Association lists the standard normal range for adults as 60–100 beats per minute, but where you fall in that range — and what's typical for a well-conditioned person — varies more than people expect.</p>
+
+      <table>
+        <thead><tr><th>Age Group</th><th>Normal Range (bpm)</th><th>Athlete Range (bpm)</th></tr></thead>
+        <tbody>
+          <tr><td>18–25</td><td>60–100</td><td>40–60</td></tr>
+          <tr><td>26–35</td><td>60–100</td><td>40–62</td></tr>
+          <tr><td>36–45</td><td>60–100</td><td>42–64</td></tr>
+          <tr><td>46–55</td><td>60–100</td><td>44–66</td></tr>
+          <tr><td>56–65</td><td>60–100</td><td>46–68</td></tr>
+          <tr><td>65+</td><td>60–100</td><td>48–70</td></tr>
+        </tbody>
+      </table>
+      <div class="table-caption">Source: American Heart Association; athlete ranges reflect typical findings in well-trained endurance athletes</div>
+
+      <p>Highly trained endurance athletes commonly have resting heart rates in the 40s, occasionally even the high 30s — this is a normal adaptation, not a medical concern, as long as it's not accompanied by symptoms like dizziness or fatigue.</p>
+
+      <h2>What makes your resting heart rate go up or down?</h2>
+      <h3>Factors that lower resting heart rate</h3>
+      <ul>
+        <li><strong>Cardiovascular fitness</strong> — the single biggest factor; regular aerobic training increases stroke volume, meaning your heart needs fewer beats to pump the same amount of blood</li>
+        <li><strong>Good sleep</strong> — poor or insufficient sleep is consistently associated with elevated resting heart rate the following day</li>
+        <li><strong>Lower stress levels</strong> — chronic stress elevates baseline sympathetic nervous system activity, raising RHR</li>
+        <li><strong>Hydration</strong> — even mild dehydration measurably raises resting heart rate</li>
+      </ul>
+
+      <h3>Factors that raise resting heart rate</h3>
+      <ul>
+        <li><strong>Illness or fever</strong> — temporarily elevates RHR, often one of the earliest signs you're getting sick</li>
+        <li><strong>Caffeine and stimulants</strong> — can raise heart rate for hours after consumption</li>
+        <li><strong>Dehydration</strong> — your heart compensates for reduced blood volume by beating faster</li>
+        <li><strong>Stress and anxiety</strong> — activates the sympathetic nervous system</li>
+        <li><strong>Overtraining</strong> — without adequate recovery, RHR can rise as a sign your body hasn't fully recovered</li>
+        <li><strong>Certain medications</strong> — some common medications, including decongestants and certain asthma medications, can elevate heart rate</li>
+      </ul>
+
+      <h2>When should a high or low resting heart rate concern you?</h2>
+      <p>A resting heart rate consistently above 100 bpm (tachycardia) or below 60 bpm without a fitness-related explanation (bradycardia) can sometimes indicate an underlying issue — including thyroid conditions, anemia, electrolyte imbalances, or in rarer cases, cardiac conditions.</p>
+      <p>That said, context matters enormously. A low resting heart rate in a fit, asymptomatic person training regularly is a positive sign, not a concerning one. A high resting heart rate without an obvious cause (stress, caffeine, illness, dehydration) warrants a conversation with your doctor, especially if it comes with symptoms like dizziness, chest discomfort, or unusual fatigue.</p>
+      <p>If your resting heart rate suddenly changes significantly from your personal baseline — regardless of what that baseline is — that's generally more worth paying attention to than the absolute number itself.</p>
+
+      <h2>Why resting heart rate matters for biological age</h2>
+      <p>Resting heart rate is one of the key inputs in several biological age and fitness estimation formulas, including the Uth formula used to estimate VO₂max from the ratio of maximum to resting heart rate. This is because RHR is a strong, easily measurable proxy for overall cardiovascular efficiency — one of the most important factors in how your body ages functionally.</p>
+      <p>Tracking your resting heart rate over time (weekly or monthly averages, not single-day readings) is one of the simplest ways to monitor whether your fitness is trending in the right direction.</p>
+
+      <h2>How to measure your resting heart rate accurately</h2>
+      <ol>
+        <li>Measure first thing in the morning, before getting out of bed</li>
+        <li>Use two fingers (not your thumb) on your wrist or neck, or use a fitness tracker/chest strap</li>
+        <li>Count for a full 60 seconds, or count for 30 seconds and multiply by 2</li>
+        <li>Repeat for 3 consecutive mornings and average the results — single readings can be noisy</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>See what your resting heart rate means for your fitness</h3>
+        <p>MyHealthTools uses your resting heart rate to estimate your VO₂max, biological age, and personal training heart rate zones — all in one free report.</p>
+        <p style="font-size:0.9rem; color:var(--muted);">No account required to see your results. Takes 3 minutes.</p>
+        <br>
+        <a href="https://app.my-health-tools.com" class="btn-cta">➡️ Get your free fitness report</a>
+      </div>
+
+      <hr style="border: 1px solid var(--stroke); margin: 40px 0;">
+
+      <p style="font-size:0.85rem; color:var(--muted);">
+        <strong>References:</strong><br>
+        American Heart Association. All About Heart Rate (Pulse). 2023.<br>
+        Uth N, et al. Estimation of VO2max from the ratio between HRmax and HRresting. Eur J Appl Physiol. 2004.<br>
+        Jensen MT, et al. Resting heart rate is a risk factor for cardiovascular and all-cause mortality. Eur Heart J. 2013.
+      </p>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2025 MyHealthTools &middot; <a href="/">Home</a> &middot; <a href="https://app.my-health-tools.com">Free Health Calculator</a></p>
+    <p style="font-size:0.7rem; color:#3D5066;">For educational use only. Not medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
