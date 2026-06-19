@@ -18,6 +18,30 @@
 
   <!-- BLOGGINNLEGG (nyeste øverst) -->
   <url>
+    <loc>https://my-health-tools.com/blog/tdee-how-many-calories-do-you-burn.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://my-health-tools.com/blog/resting-heart-rate-chart-by-age.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://my-health-tools.com/blog/bmi-calculator-outdated-alternatives.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://my-health-tools.com/blog/how-to-lower-biological-age.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://my-health-tools.com/blog/what-is-a-good-vo2max-for-age.html</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
