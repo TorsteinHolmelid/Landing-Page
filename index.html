@@ -46,7 +46,10 @@
   </script>
 
   <!-- Inline SVG favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230EA5A3'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='20' font-weight='bold' fill='%23ffffff'>M</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icon-16.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/icon-192.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,8 +114,10 @@
       font-family: 'DM Serif Display', serif;
       font-size: 1.3rem; color: var(--text);
       text-decoration: none; letter-spacing: -0.01em;
+      display: inline-flex; align-items: center; gap: 9px;   /* NYTT */
     }
     .logo span { color: var(--accent); }
+    .logo img, .footer-logo img { height:28px; width:28px; vertical-align:-8px; margin-right:8px; }  /* NY LINJE */
     .nav-links { display: flex; align-items: center; gap: 8px; }
     .btn-ghost {
       color: var(--muted2); font-size: 0.875rem; font-weight: 500;
@@ -509,7 +514,7 @@
 <!-- NAV -->
 <nav>
   <div class="inner">
-    <a href="#" class="logo">MyHealth<span>Tools</span></a>
+    <a href="#" class="logo"><img src="assets/icon.svg" alt="MyHealthTools logo">MyHealth<span>Tools</span></a>
     <div class="nav-links">
       <a href="/blog/" class="btn-ghost">📝 Blog</a>   <!-- DENNE ER NY -->
       <a href="#what-you-get" class="btn-ghost">See a sample report</a>
@@ -862,7 +867,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <a href="#" class="footer-logo">MyHealth<span>Tools</span></a>
+      <a href="#" class="footer-logo"><img src="assets/icon.svg" alt="MyHealthTools logo" style="height:24px;width:24px;vertical-align:-6px;margin-right:8px;">MyHealth<span>Tools</span></a>
       <div class="footer-links">
         <a href="https://app.my-health-tools.com/privacy" target="_blank">Privacy Policy</a>
         <a href="https://app.my-health-tools.com/terms" target="_blank">Terms of Use</a>
