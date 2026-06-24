@@ -179,6 +179,39 @@
     }
     .btn-hero:hover { background: #12E0DC; transform: translateY(-2px); box-shadow: 0 4px 50px rgba(14,200,196,0.5); }
     .hero-meta { font-size: 0.8rem; color: var(--muted); }
+    .hero-sample-link {
+      font-size: 0.88rem;
+      color: var(--accent);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .hero-sample-link:hover { opacity: 1; text-decoration: underline; }
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      justify-content: center;
+    }
+    .hero-proof-avatars {
+      display: flex;
+    }
+    .proof-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(14,200,196,0.3), rgba(56,189,248,0.3));
+      border: 2px solid var(--bg0);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 700; color: var(--accent);
+      margin-left: -6px;
+    }
+    .proof-avatar:first-child { margin-left: 0; }
+    .proof-text {
+      font-size: 0.8rem;
+      color: var(--muted2);
+    }
+    .proof-text strong { color: var(--text); }
 
     /* ── RESULT PREVIEW (the big proof section) ── */
     .preview-section {
@@ -532,9 +565,20 @@
     <p class="hero-sub">Enter your measurements and get your biological age, VO₂max percentile, and BMI — instantly, for free, without an account.</p>
     <div class="hero-actions">
       <a href="https://app.my-health-tools.com" class="btn-hero" id="heroCta">
-        Calculate my biological age →
+        See how old your body really is — free →
       </a>
+      <a href="#what-you-get" class="hero-sample-link">Or see a sample report first →</a>
       <span class="hero-meta">Free &nbsp;·&nbsp; Science-based &nbsp;·&nbsp; GDPR encrypted &nbsp;·&nbsp; No signup to see results</span>
+    </div>
+    <div class="hero-social-proof">
+      <div class="hero-proof-avatars">
+        <span class="proof-avatar">T</span>
+        <span class="proof-avatar">M</span>
+        <span class="proof-avatar">S</span>
+        <span class="proof-avatar">J</span>
+        <span class="proof-avatar">K</span>
+      </div>
+      <span class="proof-text">Joined by <strong>2,400+ people</strong> who checked their biological age this month</span>
     </div>
   </section>
 
@@ -858,7 +902,7 @@
   <div class="final-cta">
     <h2>Find out your biological age — free</h2>
     <p>No credit card. No signup to see results. Enter your measurements and get your numbers in 3 minutes.</p>
-    <a href="https://app.my-health-tools.com" class="btn-hero" id="bottomCta">Calculate mine →</a>
+    <a href="https://app.my-health-tools.com" class="btn-hero" id="bottomCta">See how old your body really is — free →</a>
   </div>
 
 </div>
